@@ -1,0 +1,15 @@
+function summarizeText() {
+    const text = document.getElementById('inputText').value;
+    const outputDiv = document.getElementById('summaryOutput');
+
+    if (text.trim() === '') {
+        outputDiv.innerHTML = 'Please enter some text to summarize.';
+        return;
+    }
+
+    // Simple placeholder summary logic
+    const sentences = text.split('. ');
+    const summary = sentences.slice(0, Math.ceil(sentences.length / 2)).join('. ') + '.';
+
+    outputDiv.innerHTML = `<strong>Summary:</strong><br>${summary}`;
+}
